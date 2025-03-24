@@ -122,6 +122,8 @@ The application allows users to:
 | POST   | /api/login                                                 | Authenticate user          |
 | GET    | /api/tasks                                                 | Fetch all tasks            |
 | GET    | /api/tasks?search=term                                     | Search tasks               |
+| GET    | /api/tasks?sort=desc                                       | Sort tasks by newest first |
+| GET    | /api/tasks?sort=asc                                        | Sort tasks by oldest first |
 | GET    | /api/tasks?status=done                                     | Filter tasks by status     |
 | GET    | /api/tasks?due_date_from=2025-03-10&due_date_to=2025-03-20 | Filter tasks by date range |
 | POST   | /api/tasks                                                 | Create a new task          |
