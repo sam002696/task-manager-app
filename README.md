@@ -126,3 +126,103 @@ The application allows users to:
 | POST   | /api/tasks             | Create a new task      |
 | PUT    | /api/tasks/{id}        | Update a task          |
 | DELETE | /api/tasks/{id}        | Delete a task          |
+
+## Local Installation
+
+Follow the steps below to run the Task Manager App locally on your machine.
+
+### Prerequisites
+
+- Node.js (v18+)
+- Composer
+- PHP (v8.1+)
+- MySQL (or use XAMPP)
+- Docker (optional for backend)
+- Git
+
+---
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/your-username/task-manager.git
+cd task-manager
+```
+
+---
+
+## Backend Setup (task-manager-backend)
+
+```bash
+cd task-manager-backend
+```
+
+1. Install PHP dependencies
+
+```bash
+composer install
+```
+
+2. Create .env file
+
+```bash
+cp .env.example .env
+```
+
+Update your .env file with your local database and app configurations:
+
+```bash
+APP_URL=http://localhost:8000
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=task_manager
+DB_USERNAME=root
+DB_PASSWORD=your_password
+```
+
+3. Generate application key
+
+```bash
+php artisan key:generate
+```
+
+4. Run migrations
+
+```bash
+php artisan migrate
+```
+
+5. Serve the backend
+
+```bash
+php artisan serve
+```
+
+The backend should now be running at: http://127.0.0.1:8000
+
+Optional: Use Docker
+
+```bash
+docker-compose up -d
+```
+
+## Frontend Setup (task-manager-frontend)
+
+```bash
+cd ../task-manager-frontend
+```
+
+1. Install dependencies
+
+```bash
+npm install
+```
+
+2. Run the frontend
+
+```bash
+npm run dev
+```
+
+The frontend should now be running at: http://localhost:5173
