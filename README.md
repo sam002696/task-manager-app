@@ -1,137 +1,128 @@
-# 📝 Task Manager App
+# Task Manager App
 
-A full-stack Task Management application built with **ReactJS**, **PHP (Laravel)**, and **MySQL**, designed for efficient task tracking and organization. This project was developed as part of a Software Engineering Assessment and demonstrates best practices in frontend architecture, backend API design, and deployment workflows.
-
----
-
-## 🌐 Live URLs
-
-- 🔗 **Frontend**: [http://13.233.71.79](http://13.233.71.79)
-- 🔗 **Backend API**: [http://43.204.236.19:8080](http://43.204.236.19:8080)
+A full-stack Task Management application built with **ReactJS**, **PHP (Laravel)**, and **MySQL**, designed for efficient task tracking and organization. The project implements best practices in frontend architecture, backend API design, and production deployment.
 
 ---
 
-## 🎯 Objective
+## Live URLs
 
-Develop a Task Manager App that allows users to:
+- **Frontend**: [http://13.233.71.79](http://13.233.71.79)
+- **Backend API**: [http://43.204.236.19:8080](http://43.204.236.19:8080)
+
+---
+
+## Objective
+
+The application allows users to:
 
 - Register and log in securely
 - Create, update, delete, and manage tasks
-- Filter and search for tasks
-- Drag & drop tasks across different statuses (To Do, In Progress, Done)
+- Filter, sort, and search tasks
+- Drag and drop tasks between statuses (To Do, In Progress, Done)
 - Edit tasks inline
-- Deploy application with a production-ready setup
+- Experience a responsive and interactive UI with optimistic updates
 
 ---
 
-## 👣 User Flow
+## User Flow
 
-1. **Register**:  
-   Users create an account by providing valid registration credentials (name, email, password).
+1. **Registration**  
+   New users sign up with their name, email, and password.
 
-2. **Login**:  
-   After successful registration, the user is redirected to the login page. Upon entering valid credentials, a token is received and stored securely.
+2. **Login**  
+   Upon successful registration, users are directed to the login page. Valid credentials return an authentication token stored securely.
 
-3. **Dashboard (Task Board)**:  
-   Authenticated users are taken to the **Taskboard** page, where they can:
-   - View all tasks in a **grid layout** grouped by task status.
-   - Add new tasks using a form with proper validation.
-   - **Inline edit** task name, description, or status by clicking on the respective fields.
-   - Use **drag and drop** to move tasks between **To Do**, **In Progress**, and **Done** columns.
-   - Dragging is enabled by holding the **drag icon** at the bottom-right corner of the task card.
-   - Tasks are updated optimistically for better UX, even before the API responds.
+3. **Taskboard**  
+   Authenticated users access the taskboard where they can:
+   - View tasks in a grid grouped by status
+   - Add new tasks using a validated form
+   - Edit task title, description, and status inline
+   - Move tasks between columns via drag and drop, enabled by an icon in the bottom-right of each card
+   - Experience instant UI feedback via optimistic updates before the API responds
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 
-- [ReactJS](https://reactjs.org/) with [Vite](https://vitejs.dev/)
-- [Redux](https://redux.js.org/) for state management
-- [Redux-Saga](https://redux-saga.js.org/) for side effects handling
-- [Tailwind CSS](https://tailwindcss.com/) for styling
-- [@dnd-kit](https://docs.dndkit.com/) for drag-and-drop
-- [React Router](https://reactrouter.com/) for routing
-- Optimistic UI updates, Debounced search, Lazy loading
+- **ReactJS** with **Vite**
+- **Redux** for state management
+- **Redux-Saga** for handling side effects
+- **Tailwind CSS** for styling
+- **@dnd-kit** for drag-and-drop
+- **React Router** for routing
+- Optimistic UI updates, lazy loading, debounced search
 
 ### Backend
 
-- [PHP Laravel](https://laravel.com/) MVC Framework
-- [MySQL](https://www.mysql.com/) database
-- [Laravel Sanctum](https://laravel.com/docs/10.x/sanctum) for token-based authentication
-- RESTful API with search, filter, and CRUD functionality
-- Dockerized setup for containerized deployment
-- Unit tests for API endpoints
+- **Laravel (PHP MVC Framework)**
+- **MySQL** for data storage
+- **Laravel Sanctum** for token-based authentication
+- RESTful API with search, filter, and CRUD
+- Unit tests for API functionality
+- Dockerized setup for deployment
 
 ---
 
-## 📦 Features
+## Key Features
 
-### ✅ Task Management
+### Task Management
 
-- Create, update, delete tasks
-- Inline editing of task name, description, status
-- Drag and drop tasks between statuses (To Do, In Progress, Done)
-- Filtering by status, sorting by due date
-- Debounced task search bar
-- Optimistic UI updates (UI updates immediately on actions)
+- Add, edit (inline), and delete tasks
+- Drag and drop between task statuses
+- Search tasks with debounce
+- Filter and sort tasks by status and due date
+- Optimistic UI updates
 
-### 👤 Auth Flow
+### Authentication
 
-- User registration and login (secured with Laravel Sanctum)
-- Authentication token stored securely
-- Protected Taskboard route for authenticated users only
+- Secure user registration and login
+- Token stored on the client securely
+- Authenticated access to task features
 
-### 🧩 UI/UX
+### UI/UX and Performance
 
-- Fully responsive and clean layout
-- Smooth animations on drag & drop
-- Accessible forms with validation
-- Reusable and modular components
-
-### 🧠 State & Performance
-
-- Redux & Redux-Saga for predictable and scalable state management
-- Debounced search to reduce unnecessary API calls
-- API caching and lazy-loading of components for performance optimization
+- Clean, responsive, and modular design
+- Smooth animations on drag-and-drop
+- Debounced API calls for better performance
+- Lazy-loaded components and API response caching
 
 ---
 
-## 🧪 Testing
+## Testing
 
-- Laravel feature tests for API endpoints
-- Tests include validation, task creation, update, deletion, and filtering
-
----
-
-## 🐳 Docker Support
-
-- Backend containerized using Docker
-- Docker Compose configured for Laravel backend and MySQL
-- Easy to deploy and run in isolated environments
+- Feature tests written using Laravel's built-in testing tools
+- Coverage includes validation, CRUD operations, and filtering logic
 
 ---
 
-## ☁️ Deployment
+## Docker Support
 
-- Frontend deployed on **AWS EC2** (Vite build served via Nginx)
-- Backend deployed on **AWS EC2**
-- MySQL hosted on **AWS RDS**
-- Laravel environment variables secured
-- Production-ready setup with separate environments
+- Laravel backend and MySQL containerized using Docker
+- Docker Compose file for easy setup
+- Nginx configured for serving the Laravel application
 
 ---
 
-## 🗃️ API Endpoints
+## Deployment
 
-| Method | Endpoint               | Description             |
-| ------ | ---------------------- | ----------------------- |
-| POST   | /api/register          | Register new user       |
-| POST   | /api/login             | Login and receive token |
-| GET    | /api/tasks             | Fetch all tasks         |
-| GET    | /api/tasks?search=term | Search tasks            |
-| GET    | /api/tasks?status=done | Filter by status        |
-| POST   | /api/tasks             | Create new task         |
-| PUT    | /api/tasks/{id}        | Update task             |
-| DELETE | /api/tasks/{id}        | Delete task             |
+- Frontend deployed to **AWS EC2** and served via **Nginx**
+- Backend API deployed to **AWS EC2**
+- Database hosted on **AWS RDS**
+- Environment variables secured with `.env` configuration
+
+---
+
+## API Endpoints
+
+| Method | Endpoint               | Description            |
+| ------ | ---------------------- | ---------------------- |
+| POST   | /api/register          | Register a new user    |
+| POST   | /api/login             | Authenticate user      |
+| GET    | /api/tasks             | Fetch all tasks        |
+| GET    | /api/tasks?search=term | Search tasks           |
+| GET    | /api/tasks?status=done | Filter tasks by status |
+| POST   | /api/tasks             | Create a new task      |
+| PUT    | /api/tasks/{id}        | Update a task          |
+| DELETE | /api/tasks/{id}        | Delete a task          |
