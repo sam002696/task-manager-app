@@ -1,12 +1,12 @@
 # Task Manager App
 
-A full-stack Task Management application built with **ReactJS**, **PHP (Laravel)**, and **MySQL**, designed for efficient task tracking and organization. The project implements best practices in frontend architecture, backend API design, and production deployment.
+A full-stack Task Management application built with **ReactJS**, **PHP (Laravel)**, and **MySQL**, designed for efficient task tracking and organization. The project implements best practices in frontend architecture, backend API design, and deployment.
 
 ---
 
 ## Live URLs
 
-- **Frontend**: [http://13.233.71.79](http://13.233.71.79)
+- **Live demo link**: [http://13.233.71.79](http://13.233.71.79)
 - **Backend API**: [http://43.204.236.19:8080](http://43.204.236.19:8080)
 
 ---
@@ -37,7 +37,7 @@ The application allows users to:
    - View tasks in a grid grouped by status
    - Add new tasks using a validated form
    - Edit task title, description, and status inline
-   - Move tasks between columns via drag and drop, enabled by an icon in the bottom-right of each card
+   - Move tasks between columns via drag and drop, enabled by an **icon** in the bottom-right of each card
    - Experience instant UI feedback via optimistic updates before the API responds
 
 ---
@@ -99,9 +99,9 @@ The application allows users to:
 
 ## Docker Support
 
-- Laravel backend and MySQL containerized using Docker
+- **Laravel backend** containerized using Docker
 - Docker Compose file for easy setup
-- Nginx configured for serving the Laravel application
+- **Nginx** configured for serving the Laravel application
 
 ---
 
@@ -116,18 +116,19 @@ The application allows users to:
 
 ## API Endpoints
 
-| Method | Endpoint               | Description            |
-| ------ | ---------------------- | ---------------------- |
-| POST   | /api/register          | Register a new user    |
-| POST   | /api/login             | Authenticate user      |
-| GET    | /api/tasks             | Fetch all tasks        |
-| GET    | /api/tasks?search=term | Search tasks           |
-| GET    | /api/tasks?status=done | Filter tasks by status |
-| POST   | /api/tasks             | Create a new task      |
-| PUT    | /api/tasks/{id}        | Update a task          |
-| DELETE | /api/tasks/{id}        | Delete a task          |
+| Method | Endpoint                                                   | Description                |
+| ------ | ---------------------------------------------------------- | -------------------------- |
+| POST   | /api/register                                              | Register a new user        |
+| POST   | /api/login                                                 | Authenticate user          |
+| GET    | /api/tasks                                                 | Fetch all tasks            |
+| GET    | /api/tasks?search=term                                     | Search tasks               |
+| GET    | /api/tasks?status=done                                     | Filter tasks by status     |
+| GET    | /api/tasks?due_date_from=2025-03-10&due_date_to=2025-03-20 | Filter tasks by date range |
+| POST   | /api/tasks                                                 | Create a new task          |
+| PUT    | /api/tasks/{id}                                            | Update a task              |
+| DELETE | /api/tasks/{id}                                            | Delete a task              |
 
-## Local Installation
+## Local Installation guidelines
 
 Follow the steps below to run the Task Manager App locally on your machine.
 
@@ -145,8 +146,8 @@ Follow the steps below to run the Task Manager App locally on your machine.
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/task-manager.git
-cd task-manager
+git clone https://github.com/sam002696/task-manager-app.git
+cd task-manager-app
 ```
 
 ---
